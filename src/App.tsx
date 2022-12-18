@@ -9,6 +9,7 @@ import Admin from './pages/admin';
 import { initialValues } from './constants';
 import appReducer from './reducer/app.reducer';
 import Login from './pages/login';
+import UserPublic from './pages/userPublic';
 
 export const AppContext = React.createContext(null);
 
@@ -27,6 +28,10 @@ function App() {
     {
       path: '/login',
       element: <Login />,
+    },
+    {
+      path: '/:username',
+      element: <UserPublic />,
     },
   ]);
   const [appData, dispatch] = useReducer(appReducer, initialValues);

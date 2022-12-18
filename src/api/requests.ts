@@ -31,3 +31,12 @@ export const loginApi = async (username, password) => {
     return err;
   }
 };
+
+export const getUserPublicDataApi = async (username: string) => {
+  try {
+    const response = await api.get(`/${username}`);
+    return response.data;
+  } catch (err) {
+    return err;
+  }
+};
